@@ -31,7 +31,7 @@ function Contact() {
                 <a className="mx-5" href="https://telegram.me/rasppibro"><FontAwesomeIcon icon={faTelegram} size="2x" className="hover:text-blue-300 transition-all ease-in duration-300 delay-150"/> </a>
                 <a className="mr-0 ml-5" href="https://reddit.com/u/rasppibro"><FontAwesomeIcon icon={faReddit} size="2x" className="hover:text-orange-400 transition-all ease-in duration-300 delay-150"/></a>
             </div>
-            <p className="m-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem ea sint adipisci dicta, illum deleniti expedita reiciendis ducimus. Perspiciatis magni exercitationem est quis autem illo quam facilis excepturi distinctio placeat!</p>
+            <p className="m-10">Ijtimoiy tarmoqlarda bizni kuzatib boring va yangiliklardan bebaxra qolmang! Barcha yangiliklarni ijtimoiy tarmoqlardagi sahifalarimizga yuklab boramiz.</p>
         </Layout>
     )
 }
