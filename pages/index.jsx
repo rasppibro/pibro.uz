@@ -1,19 +1,23 @@
 import Head from 'next/head'
-import Image from 'next/image'
+import Link from 'next/link'
 import Layout from './components/Layout'
 
-export default function Home() {
+function Home(props) {
   const navigation = [
     { name: 'Asosiy', href: '/', current: true },
     { name: 'Jamoa', href: '/team', current: false },
     { name: 'Loyihalar', href: '/projects', current: false },
     { name: 'Bog\'lanish', href: '/contact', current: false },
   ]
+
+  console.log(props.data);
+
   return (
+    
     <>
       <Head>
         <title>Pi Bro jamiyatining rasmiy web sahifasi | Asosiy</title>
-        <link rel="icon" href="/RespPiBro.png" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
@@ -29,67 +33,19 @@ export default function Home() {
               Yangiliklardan:
             </h1>
           <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-10'>
-              <div className="animate-pulse rounded-2xl p-10 border-2 border-gray-800 hover:shadow-xl transition ease-in-out duration-300">
-  <div className="animate-pulse flex space-x-4">
-    <div className="rounded-full bg-gray-700 h-10 w-10"></div>
-    <div className="flex-1 space-y-6 py-1">
-      <div className="h-2 bg-gray-700 rounded"></div>
-      <div className="space-y-3">
-        <div className="grid grid-cols-3 gap-4">
-          <div className="h-2 bg-gray-700 rounded col-span-2"></div>
-          <div className="h-2 bg-gray-700 rounded col-span-1"></div>
-        </div>
-        <div className="h-2 bg-gray-700 rounded"></div>
-      </div>
-    </div>
-  </div>
-
-              </div>
-              <div className="animate-pulse rounded-2xl p-10 border-2 border-gray-800 hover:shadow-xl transition ease-in-out duration-300">
-              <div className="animate-pulse flex space-x-4">
-    <div className="rounded-full bg-gray-700 h-10 w-10"></div>
-    <div className="flex-1 space-y-6 py-1">
-      <div className="h-2 bg-gray-700 rounded"></div>
-      <div className="space-y-3">
-        <div className="grid grid-cols-3 gap-4">
-          <div className="h-2 bg-gray-700 rounded col-span-2"></div>
-          <div className="h-2 bg-gray-700 rounded col-span-1"></div>
-        </div>
-        <div className="h-2 bg-gray-700 rounded"></div>
-      </div>
-    </div>
-  </div>
-              </div>
-              <div className="animate-pulse rounded-2xl p-10 border-2 border-gray-800 hover:shadow-xl transition ease-in-out duration-300">
-              <div className="animate-pulse flex space-x-4">
-    <div className="rounded-full bg-gray-700 h-10 w-10"></div>
-    <div className="flex-1 space-y-6 py-1">
-      <div className="h-2 bg-gray-700 rounded"></div>
-      <div className="space-y-3">
-        <div className="grid grid-cols-3 gap-4">
-          <div className="h-2 bg-gray-700 rounded col-span-2"></div>
-          <div className="h-2 bg-gray-700 rounded col-span-1"></div>
-        </div>
-        <div className="h-2 bg-gray-700 rounded"></div>
-      </div>
-    </div>
-  </div>
-              </div>
-              <div className="animate-pulse rounded-2xl p-10 border-2 border-gray-800 hover:shadow-xl transition ease-in-out duration-300">
-              <div className="animate-pulse flex space-x-4">
-    <div className="rounded-full bg-gray-700 h-10 w-10"></div>
-    <div className="flex-1 space-y-6 py-1">
-      <div className="h-2 bg-gray-700 rounded"></div>
-      <div className="space-y-3">
-        <div className="grid grid-cols-3 gap-4">
-          <div className="h-2 bg-gray-700 rounded col-span-2"></div>
-          <div className="h-2 bg-gray-700 rounded col-span-1"></div>
-        </div>
-        <div className="h-2 bg-gray-700 rounded"></div>
-      </div>
-    </div>
-  </div>
-              </div>
+              {props.data.map(item=>(
+                <Link href={`/blogs/${item.id}`} key={item.id}>
+                <div className=" rounded-2xl  shadow-xl transition ease-in-out duration-300 h-max max-h-max min-h-max" >
+                  <div className='rounded-t-2xl' style={{backgroundImage: `url(${item.photo})`, backgroundSize: "cover", backgroundPosition: "center",width: '100%', height: "300px"}}/>
+                  <h3 className='font-bold text-lg m-4'>{item.title}</h3>
+                  <p className='m-4'>{item.summary}</p>
+                  <Link href={`/blogs/${item.id}`}>
+                    <button className="bg-rose-800 mb-4 rounded-md mt-0 mx-4 py-2 px-4 shadow-xl text-white">Batafsil</button>
+                  </Link>
+                </div>
+                </Link>
+              ))}
+              
               
           </div>
         </Layout>
@@ -97,3 +53,16 @@ export default function Home() {
     </>
   )
 }
+
+export async function getServerSideProps(){
+  const response = await fetch('http://blogapibro.herokuapp.com/api/v1/');
+  const data = await response.json()
+
+  return {
+    props:{
+      data
+    }
+  }
+}
+
+export default Home

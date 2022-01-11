@@ -15,7 +15,7 @@ function Contact() {
         <Layout navigation={navigation}>
             <Head>
         <title>Pi Bro jamiyatining rasmiy web sahifasi | Bog'lanish</title>
-        <link rel="icon" href="/RespPiBro.png" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
           <div className='bg-gradient-to-r from-rose-800 to-rose-400 text-left flex justify-center items-start p-10 flex-col'>
           
