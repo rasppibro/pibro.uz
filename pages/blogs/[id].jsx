@@ -18,6 +18,27 @@ const Blog = (props) =>{
              <Head>
         <title> {props.data.title}</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="Pi Bro Jamiyatining Rasmiy Web Sayti."/>
+        <meta property="og:type" content="article" />
+
+        <meta property="og:title" content={props.data.title} />
+
+        <meta property="og:description" content={props.data.body} />
+
+        <meta property="og:image" content={props.data.photo} />
+
+        <meta property="og:url" content="pibro.uz" />
+
+        <meta property="og:site_name" content="Pi Bro" />
+        <meta name="twitter:title" content={props.data.title}/>
+
+<meta name="twitter:description" content={props.data.body}/>
+
+<meta name="twitter:image" content={props.data.photo}/>
+
+<meta name="twitter:site" content="@rasppibro"/>
+
+<meta name="twitter:creator" content="@rasppibro"/>
       </Head>
             <div className='bg-gradient-to-r from-rose-800 to-rose-400 text-left flex justify-center items-start p-10 flex-col'>
           

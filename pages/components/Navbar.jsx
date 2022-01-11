@@ -11,6 +11,7 @@ const navigation = [
   { name: 'Loyihalar', href: '/projects', current: false },
   { name: 'Bog\'lanish', href: '/contact', current: false },
 ]
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }

@@ -17,6 +17,7 @@ function Home(props) {
     <>
       <Head>
         <title>Pi Bro jamiyatining rasmiy web sahifasi | Asosiy</title>
+        <meta name="description" content="Pi Bro Jamiyatining Rasmiy Web Sayti."/>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
