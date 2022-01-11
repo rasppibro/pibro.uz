@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faFacebook, faInstagram, faReddit, faTelegram} from '@fortawesome/free-brands-svg-icons'
 
 
-const Layout=({children,navigation})=>{
+const Layout=({children, navigation})=>{
     return(
         <>
         <Navbar navigation={navigation}/>

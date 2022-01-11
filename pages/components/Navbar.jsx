@@ -5,7 +5,12 @@ import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 import Image from 'next/image'
 import Link from 'next/link'
 
-
+const navigation = [
+  { name: 'Asosiy', href: '/', current: true },
+  { name: 'Jamoa', href: '/team', current: false },
+  { name: 'Loyihalar', href: '/projects', current: false },
+  { name: 'Bog\'lanish', href: '/contact', current: false },
+]
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
