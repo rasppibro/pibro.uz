@@ -16,7 +16,7 @@ const Layout=({children,navigation})=>{
             <div className="mr-4">
             <Image src="/RespPiBro.png" width="48" height="48" />
             </div>
-            <p className="mt-4 sm:mt-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio quia excepturi aspernatur qui libero rem?</p>
+            <p className="mt-4 sm:mt-0">Pi Bro jamiyati Raspberry Pi haqida ma\'lumot beruvchi jamiyat.Jamiyatning asosiy maqsadi odamlarni Raspberry Pi haqida to\'liq ma\'lumot olishini ta\'minlashdir.</p>
             <div className="text-left sm:text-center mt-4 sm:mt-0">
                 <a className="ml-0 mr-5 sm:mx-3" href="https://instagram.com/rasppibro"><FontAwesomeIcon icon={faInstagram} size="2x" className="hover:text-pink-400 transition-all ease-in duration-300 delay-150"/></a>
                 <a className="mx-5 sm:mx-3" href="https://facebook.com/rasppibro"><FontAwesomeIcon icon={faFacebook} size="2x" className="hover:text-blue-500 transition-all ease-in duration-300 delay-150"/> </a>
